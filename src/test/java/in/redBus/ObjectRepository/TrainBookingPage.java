@@ -102,5 +102,7 @@ public class TrainBookingPage extends BaseClass {
 	}
 	public WebElement getFarerate() {
 		return farerate;
-	}				
+	}
+	
+	
 }

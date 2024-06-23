@@ -77,14 +77,14 @@ public class TrainBooking6 extends BaseClass {
 			if(i==trains.size()-1) {
 				JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("window.scrollTo(0,document.body.scrollHeight)",trains.get(i));
-				//trains= driver.findElements(By.xpath("//span[@class='srp_train_name']"));
-				trainBookingPage.getTrains();
-				//deptime = driver.findElements(By.xpath("//span[@class='srp_departure_time']"));
-				trainBookingPage.getDeptime();
-				//arrtime = driver.findElements(By.xpath("//span[@class='srp_arrival_time']"));
-				trainBookingPage.getArrtime();
-				//farerate = driver.findElements(By.xpath("//div[@class='srp_timimngs_wrap srp_src_dst_stations']"));
-				trainBookingPage.getFarerate();
+				trains= driver.findElements(By.xpath("//span[@class='srp_train_name']"));
+				//trainBookingPage.getTrains();
+				deptime = driver.findElements(By.xpath("//span[@class='srp_departure_time']"));
+				//trainBookingPage.getDeptime();
+				arrtime = driver.findElements(By.xpath("//span[@class='srp_arrival_time']"));
+				//trainBookingPage.getArrtime();
+				farerate = driver.findElements(By.xpath("//div[@class='srp_timimngs_wrap srp_src_dst_stations']"));
+				//trainBookingPage.getFarerate();
 			}
 			else {
 				String t1 = trains.get(i).getText();

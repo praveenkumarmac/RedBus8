@@ -78,30 +78,30 @@ public class BusBooking6 extends BaseClass {
 	}
 	@Then("Validate the bus displayed in the UI")
 	public void validate_the_bus_displayed_in_the_UI() {
-		//List<WebElement> buses = driver.findElements(By.xpath("//div[contains(@class,'travels lh-24 f-bold d-color')]"));
+		List<WebElement> buses = driver.findElements(By.xpath("//div[contains(@class,'travels lh-24 f-bold d-color')]"));
 		List<WebElement> depTimes = driver.findElements(By.xpath("//div[contains(@class,'dp-time f-19 d-color f-bold')]"));		
 		List<WebElement> arrTimes = driver.findElements(By.xpath("//div[contains(@class,'bp-time f-19 d-color disp-Inline')]"));
 		List<WebElement> fare = driver.findElements(By.xpath("//span[contains(@class,'f-19')]"));
 		int size = trainBookingPage.getBuses().size(); 
 		for(int i=0; i<size;i++) {
 			//System.out.println(buses.size());
-			if(i==trainBookingPage.getBuses().size()-1) {
+			if(i==buses.size()-1) {
 				//System.out.println(buses.size());
 				JavascriptExecutor js = (JavascriptExecutor)driver;
-				js.executeScript("arguments[0].scrollIntoView(true)", trainBookingPage.getBuses().get(i));
-				//buses = driver.findElements(By.xpath("//div[contains(@class,'travels lh-24 f-bold d-color')]"));
-				trainBookingPage.getBuses();
-				//depTimes = driver.findElements(By.xpath("//div[contains(@class,'dp-time f-19 d-color f-bold')]"));
-				trainBookingPage.getDepTimes();
-				//arrTimes = driver.findElements(By.xpath("//div[contains(@class,'bp-time f-19 d-color disp-Inline')]"));
-				trainBookingPage.getArrTimes();
-				//fare = driver.findElements(By.xpath("//span[contains(@class,'f-19')]"));
-				trainBookingPage.getFare();
-				size = trainBookingPage.getBuses().size();
+				js.executeScript("arguments[0].scrollIntoView(true)", buses.get(i));
+				buses = driver.findElements(By.xpath("//div[contains(@class,'travels lh-24 f-bold d-color')]"));
+				//trainBookingPage.getBuses();
+				depTimes = driver.findElements(By.xpath("//div[contains(@class,'dp-time f-19 d-color f-bold')]"));
+				//trainBookingPage.getDepTimes();
+				arrTimes = driver.findElements(By.xpath("//div[contains(@class,'bp-time f-19 d-color disp-Inline')]"));
+				//trainBookingPage.getArrTimes();
+				fare = driver.findElements(By.xpath("//span[contains(@class,'f-19')]"));
+				//trainBookingPage.getFare();
+				size = buses.size();
 			}
 			else {
 				//System.out.println(size);
-				String bus = trainBookingPage.getBuses().get(i).getText();
+				String bus = buses.get(i).getText();
 				//System.out.println(bus);
 				String depTime = depTimes.get(i).getText();
 				String arrTime = arrTimes.get(i).getText();
